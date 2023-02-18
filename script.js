@@ -8,10 +8,21 @@ function Book(author, title, pages, read) {
     this.info = function() {
         return `${title} by ${author} has ${pages} pages and ${read}.`
     }
-    addBookToLibrary(this);
 }
 
-function addBookToLibrary(Book) {
-    const newBook = new Book () 
+function addBookToLibrary() {
+    let authorvalue = document.getElementById('authorValue');
+    let titlevalue = document.getElementById('titleValue');
+    let pagesvalue = document.getElementById('pagesValue');
+    let readvalue = document.getElementById('readValue');
+    const newBook = new Book(authorvalue.value, titlevalue.value, pagesvalue.value, readvalue.value)
     myLibrary.push(newBook)
 }
+
+let form = document.querySelector('#form');
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    addBookToLibrary()
+    form.reset();
+})
