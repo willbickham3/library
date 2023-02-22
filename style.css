@@ -13,6 +13,22 @@ body {
 .library-container {
     height: 100vh;
     width: 100%;
+    display: grid;
     grid-template-columns: 0.5fr 2fr;
     grid-template-rows: 0.5fr 3fr;
+}
+
+.library-header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.library-form {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.library-main {
+    grid-column: 2;
+    grid-row: 2;
 }
