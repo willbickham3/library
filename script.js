@@ -1,5 +1,10 @@
 let myLibrary = [];
 
+let authorvalue = document.getElementById('authorValue');
+let titlevalue = document.getElementById('titleValue');
+let pagesvalue = document.getElementById('pagesValue');
+let readvalue = document.getElementById('readValue');
+
 function Book(author, title, pages, read) {
     this.author = author;
     this.title = title;
@@ -10,16 +15,28 @@ function Book(author, title, pages, read) {
     }
 }
 
+// Function to assign data-numbers for splicing, add DOM elements and assign them values
+
+function createBook() {
+    let bookDiv = document.createElement('div', 'class=book');
+    bookDiv.dataset.number = (myLibrary.length - 1);
+    let titleContent = document.createElement('div');
+    titleContent.classList.add('book-content');
+    titleContent.innerHTML = titlevalue.value;
+    let authorContent = document.createElement('div');
+    authorContent.classList.add('book-content');
+    authorContent.innerHTML = authorvalue.value;
+    let pagesContent = document.createElement('div');
+    pagesContent.classList.add('book-content')
+    pagesContent.innerHTML = pagesvalue.value;
+    document.querySelector('.library-main').appendChild(bookDiv);
+    bookDiv.append(titleContent, authorContent, pagesContent);
+}
+
 function addBookToLibrary() {
-    let authorvalue = document.getElementById('authorValue');
-    let titlevalue = document.getElementById('titleValue');
-    let pagesvalue = document.getElementById('pagesValue');
-    let readvalue = document.getElementById('readValue');
     const newBook = new Book(authorvalue.value, titlevalue.value, pagesvalue.value, readvalue.value)
-    myLibrary.push(newBook)
-    const newDiv = document.createElement('div');
-    newDiv.dataset.number = (myLibrary.length - 1);
-    document.querySelector('.library-main').appendChild(newDiv)
+    myLibrary.push(newBook);
+    createBook();
 }
 
 let form = document.querySelector('#form');
