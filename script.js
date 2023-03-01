@@ -26,7 +26,7 @@ function Book(author, title, pages, read) {
 
 function createBook() {
     let bookDiv = document.createElement('div', 'class=book');
-    bookDiv.dataset.number = myLibrary.length;
+    bookDiv.dataset.number = (myLibrary.length - 1);
     let titleContent = document.createElement('div');
     titleContent.classList.add('book-content');
     titleContent.innerHTML = titlevalue.value;
@@ -39,6 +39,11 @@ function createBook() {
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete');
     deleteBtn.innerHTML = 'x';
+    deleteBtn.onclick = function() {
+        let x = bookDiv.dataset.number;
+        delete myLibrary[x];
+        bookDiv.remove();
+    }
     document.querySelector('.library-main').appendChild(bookDiv);
     bookDiv.append(titleContent, authorContent, pagesContent, deleteBtn);
 }
