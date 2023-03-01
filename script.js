@@ -1,10 +1,16 @@
+// Array that new Books are pushed into
+
 let myLibrary = [];
+
+// Naming/Identifying variables for use in functions
 
 let form = document.querySelector('#form');
 let authorvalue = document.getElementById('authorValue');
 let titlevalue = document.getElementById('titleValue');
 let pagesvalue = document.getElementById('pagesValue');
 let readvalue = document.getElementById('readValue');
+
+// Constructor function to create new books
 
 function Book(author, title, pages, read) {
     this.author = author;
@@ -34,11 +40,15 @@ function createBook() {
     bookDiv.append(titleContent, authorContent, pagesContent);
 }
 
+// Function to push books into myLibrary array and create DOM elements on page
+
 function addBookToLibrary() {
     const newBook = new Book(authorvalue.value, titlevalue.value, pagesvalue.value, readvalue.value)
     myLibrary.push(newBook);
     createBook();
 }
+
+// Add form responsiveness when the submit button is pressed
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
