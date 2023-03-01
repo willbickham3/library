@@ -1,5 +1,6 @@
 let myLibrary = [];
 
+let form = document.querySelector('#form');
 let authorvalue = document.getElementById('authorValue');
 let titlevalue = document.getElementById('titleValue');
 let pagesvalue = document.getElementById('pagesValue');
@@ -38,8 +39,6 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     createBook();
 }
-
-let form = document.querySelector('#form');
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
