@@ -22,7 +22,7 @@ function Book(author, title, pages, read) {
     }
 }
 
-// Function to assign data-numbers for splicing, add DOM elements and assign them values
+// Function to assign data-numbers for splicing, add DOM elements and assign them values, delete button to remove DOM elements from page/array
 
 function createBook() {
     let bookDiv = document.createElement('div', 'class=book');
