@@ -26,7 +26,7 @@ function Book(author, title, pages, read) {
 
 function createBook() {
     let bookDiv = document.createElement('div', 'class=book');
-    bookDiv.dataset.number = (myLibrary.length - 1);
+    bookDiv.dataset.number = myLibrary.length;
     let titleContent = document.createElement('div');
     titleContent.classList.add('book-content');
     titleContent.innerHTML = titlevalue.value;
