@@ -36,8 +36,11 @@ function createBook() {
     let pagesContent = document.createElement('div');
     pagesContent.classList.add('book-content')
     pagesContent.innerHTML = pagesvalue.value;
+    let deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete');
+    deleteBtn.innerHTML = 'x';
     document.querySelector('.library-main').appendChild(bookDiv);
-    bookDiv.append(titleContent, authorContent, pagesContent);
+    bookDiv.append(titleContent, authorContent, pagesContent, deleteBtn);
 }
 
 // Function to push books into myLibrary array and create DOM elements on page
