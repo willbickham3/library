@@ -39,11 +39,6 @@ function createBook() {
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete');
     deleteBtn.innerHTML = 'x';
-    deleteBtn.onclick = function() {
-        let x = bookDiv.dataset.number;
-        delete myLibrary[x];
-        bookDiv.remove();
-    }
     document.querySelector('.library-main').appendChild(bookDiv);
     bookDiv.append(titleContent, authorContent, pagesContent, deleteBtn);
 }
