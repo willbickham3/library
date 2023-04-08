@@ -15,7 +15,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 0.5fr 3fr;
-    grid-template-rows: 0.5fr 4fr;
+    grid-template-rows: 0.7fr 4fr;
 }
 
 .library-header {
@@ -26,6 +26,11 @@ body {
     justify-content: space-between;
     padding-left: 3%;
     padding-right: 3%;
+    background-color: #DE815B;
+}
+
+.library-header div {
+    font-size: 20px;
 }
 
 .library-form {
@@ -33,6 +38,10 @@ body {
     height: 100%;
     grid-column: 1;
     grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #DE815B;
 }
 
 .library-form form {
@@ -46,6 +55,7 @@ body {
 form div {
     display: flex;
     flex-direction: column;
+    font-size: 18px;
 }
 
 .library-main {
@@ -54,6 +64,20 @@ form div {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 90px;
+    grid-template-rows: 30px;
     grid-auto-rows: 80px;
+    background-color: #56E1CD;
+}
+
+.book-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+    background-color: #56E1CD;
+}
+
+.book-header div {
+    font-size: 20px;
+    color: #4745DE;
 }
