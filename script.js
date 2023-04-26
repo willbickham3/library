@@ -33,10 +33,10 @@
         titleContent.innerHTML = titlevalue.value;
         let authorContent = document.createElement('div');
         authorContent.classList.add('book-content');
-        authorContent.innerHTML = authorvalue.value;
+        authorContent.innerHTML = `${'Author: ' + authorvalue.value}`;
         let pagesContent = document.createElement('div');
         pagesContent.classList.add('book-content')
-        pagesContent.innerHTML = pagesvalue.value;
+        pagesContent.innerHTML = `${pagesvalue.value + ' pages'}`;
         let deleteBtn = document.createElement('button');
         deleteBtn.classList.add('delete');
         deleteBtn.innerHTML = 'x';
