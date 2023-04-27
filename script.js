@@ -9,7 +9,7 @@
     let titlevalue = document.getElementById('titleValue');
     let pagesvalue = document.getElementById('pagesValue');
     let readvalue = document.getElementById('readValue');
-       
+
     // Constructor function to create new books
     
     function Book(author, title, pages, read) {
@@ -47,6 +47,18 @@
             readButton.classList.add('unread');
             readButton.innerText = `${'unread'}`;
         }
+        readButton.addEventListener('click', function(){
+            if (readButton.innerText === `${'read'}`) { 
+                readButton.classList.remove('read');
+                readButton.classList.add('unread');
+                readButton.innerText = `${'unread'}`
+            }
+            else {
+                readButton.classList.remove('unread');
+                readButton.classList.add('read');
+                readButton.innerText = `${'read'}`;
+            }
+        })
         let deleteBtn = document.createElement('button');
         deleteBtn.classList.add('delete');
         deleteBtn.innerHTML = 'x';
