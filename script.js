@@ -9,7 +9,7 @@
     let titlevalue = document.getElementById('titleValue');
     let pagesvalue = document.getElementById('pagesValue');
     let readvalue = document.getElementById('readValue');
-    
+       
     // Constructor function to create new books
     
     function Book(author, title, pages, read) {
@@ -37,6 +37,16 @@
         let pagesContent = document.createElement('div');
         pagesContent.classList.add('book-content')
         pagesContent.innerHTML = `${pagesvalue.value + ' pages'}`;
+        let readButton = document.createElement('button');
+        readButton.setAttribute("id", "readstatus");
+        if (readvalue.checked === true) {
+            readButton.classList.add('read');
+            readButton.innerText = `${"read"}`;
+        }
+        else {
+            readButton.classList.add('unread');
+            readButton.innerText = `${'unread'}`;
+        }
         let deleteBtn = document.createElement('button');
         deleteBtn.classList.add('delete');
         deleteBtn.innerHTML = 'x';
@@ -47,7 +57,7 @@
             delete myLibrary[x];
         }
         document.querySelector('.library-main').appendChild(bookDiv);
-        bookDiv.append(titleContent, authorContent, pagesContent, deleteBtn);
+        bookDiv.append(titleContent, authorContent, pagesContent, readButton, deleteBtn);
     }
     
     // Function to push books into myLibrary array and create DOM elements on page
