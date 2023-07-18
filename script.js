@@ -25,20 +25,26 @@
     // Function to assign data-numbers for splicing, add DOM elements and assign them values, delete button to remove DOM elements from page/array
     
     function createBook() {
+        
         let bookDiv = document.createElement('div');
         bookDiv.classList.add('book');
         bookDiv.dataset.number = (myLibrary.length - 1);
+
         let titleContent = document.createElement('div');
         titleContent.classList.add('book-content');
         titleContent.innerHTML = titlevalue.value;
+
         let authorContent = document.createElement('div');
         authorContent.classList.add('book-content');
         authorContent.innerHTML = `${'Author: ' + authorvalue.value}`;
+
         let pagesContent = document.createElement('div');
         pagesContent.classList.add('book-content')
         pagesContent.innerHTML = `${pagesvalue.value + ' pages'}`;
+
         let readButton = document.createElement('button');
         readButton.setAttribute("id", "readstatus");
+
         if (readvalue.checked === true) {
             readButton.classList.add('read');
             readButton.innerText = `${"read"}`;
