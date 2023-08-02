@@ -81,6 +81,11 @@
     // Function to push books into myLibrary array and create DOM elements on page
     
     function addBookToLibrary() {
+        if (!authorvalue.value || !titlevalue.value || !pagesvalue.value) 
+        {
+            alert('Please Fill Out the Full Form --(ツ)--')
+            return
+        }
         const newBook = new Book(authorvalue.value, titlevalue.value, pagesvalue.value, readvalue.value)
         myLibrary.push(newBook);
         createBook();
